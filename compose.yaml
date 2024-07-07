@@ -5,6 +5,7 @@ services:
       - "8080:8080"
     volumes:
       - "./data:/data"
+      - "./indexes:/indexes"
     command:
       - "standalone"
       - "-c"

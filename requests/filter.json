@@ -1,0 +1,11 @@
+{
+  "query": {"match": {"title": "king"}},
+  "fields": ["title"],
+  "filters": {
+    "include": {
+      "term": {
+        "tags": "anime"
+      }
+    }
+  }
+}

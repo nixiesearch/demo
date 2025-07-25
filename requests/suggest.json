@@ -1,0 +1,5 @@
+{
+  "query": "king",
+  "fields": ["title"],
+  "count": 10
+}

@@ -1,0 +1,76 @@
+inference:
+  embedding:
+    e5-small:
+      model: intfloat/e5-small-v2
+
+searcher:
+  api:
+    host: 0.0.0.0
+    port: 8080
+
+schema: 
+  movies:
+    fields:
+      title:
+        type: text
+        suggest: true
+        search: 
+          lexical:
+            analyze: english
+          semantic:
+            model: e5-small
+      overview:
+        type: text
+        search: 
+          lexical:
+            analyze: english
+          semantic:
+            model: e5-small
+      tags:
+        type: text[]
+        filter: true
+        facet: true
+        search: false
+      genres:
+        type: text[]
+        filter: true
+        facet: true
+        search: false
+      director:
+        type: text
+        search: 
+          lexical:
+            analyze: english
+      actors:
+        type: text[]
+        search: 
+          lexical:
+            analyze: english
+      characters:
+        type: text[]
+        search: 
+          lexical:
+            analyze: english
+      year:
+        type: int
+        filter: true
+        facet: true
+      votes:
+        type: int
+        filter: true
+        facet: true
+      budget:
+        type: long
+        filter: true
+        facet: true
+      popularity:
+        type: float
+        filter: true
+        facet: true
+      rating:
+        type: float
+        filter: true
+        facet: true
+      image_url:
+        type: text
+        search: false
